@@ -2,6 +2,7 @@ package org.demo.birds;
 
 import java.applet.Applet;
 import java.applet.AudioClip;
+import java.net.URL;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -37,13 +38,12 @@ public class StatThread implements Runnable {
                 frame.getField3().setText("" + deadBirds + "ֻ");
                 Thread.sleep(100);
                 if (remainBirds > 0) {
-                    AudioClip clip = Applet.newAudioClip(getClass().getResource("bird.wav"));
+                    AudioClip clip = Applet.newAudioClip(getClass().getResource("/bird.wav"));
                     clip.play();
                     try {
                         Thread.sleep(100);
                         clip.stop();
                     } catch (InterruptedException e) {
-
                         e.printStackTrace();
                     }
                 } else if (remainBirds == 0) {
@@ -55,11 +55,9 @@ public class StatThread implements Runnable {
                         System.exit(0);
                     }
                 }
-
             }
         } catch (Exception e) {
             System.out.println("抛出这个异常不知道是怎么回事？");
         }
     }
-
 }

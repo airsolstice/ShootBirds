@@ -27,14 +27,14 @@ public class BirdPanel extends JPanel {
         this.setBackground(Color.BLUE);
         Graphics2D g2 = (Graphics2D) g;
         g2.drawImage(icon.getImage(), 0, 0, icon.getIconWidth(), icon.getIconHeight(), Color.CYAN, this);
-        g2.setStroke(new BasicStroke(5.0f));
-        g2.setColor(Color.RED);
+        g2.setStroke(new BasicStroke(10.0f));
+        g2.setColor(Color.GRAY);
         g2.drawLine(x1, y1, x2, y2);
 
 
         for (Bird b : birds) {
             if (!b.isLeave())
-                //g2.fill(b.getShape());
+                g2.fill(b.getShape());
                 g2.drawImage(b.getImage(), b.getX(), b.getY(), b.getImageX(), b.getImageY(), this);
         }
     }

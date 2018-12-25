@@ -14,6 +14,7 @@ public class GameFrame extends JFrame {
     private BirdPanel panel;
 
     public GameFrame() {
+        // 设置应用图标
         this.setIconImage(Toolkit.getDefaultToolkit().getImage("res/bird.gif"));
         init();
         setLayout();
@@ -21,9 +22,9 @@ public class GameFrame extends JFrame {
 
     private void setLayout() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(300, 350);
+        this.setSize(500, 350);
         this.setResizable(false);
-
+        this.setLocationRelativeTo(null);
 
         Box box = Box.createVerticalBox();
         Box box1 = Box.createHorizontalBox();
@@ -52,7 +53,7 @@ public class GameFrame extends JFrame {
         label2 = new JLabel("剩余子弹数目");
         label3 = new JLabel("打死鸟数");
         field3 = new JTextField(10);
-        field3.setEditable(false);//���ɱ༭
+        field3.setEditable(false);
         setBirdNumText(new JTextField(20));
         setBulletNumText(new JTextField(10));
         getBirdNumText().setEditable(false);
@@ -69,8 +70,6 @@ public class GameFrame extends JFrame {
         Runnable rr2 = new StatThread(panel, this);
         Thread tt = new Thread(rr2);
         tt.start();
-
-
     }
 
     public JTextField getBirdNumText() {

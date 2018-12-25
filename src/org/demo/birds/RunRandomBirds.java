@@ -30,7 +30,6 @@ public class RunRandomBirds implements Runnable {
                 Thread t = new Thread(r);
                 t.start();
                 Thread.sleep(delay1);
-
             }
 
         } catch (Exception e) {

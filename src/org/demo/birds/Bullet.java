@@ -2,7 +2,7 @@ package org.demo.birds;
 
 class Bullet {
     private static Bullet bullet;
-    private int num=100;
+    private int num=50;
 
     private  Bullet() {
     }

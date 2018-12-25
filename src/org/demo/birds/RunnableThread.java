@@ -2,13 +2,13 @@ package org.demo.birds;
 
 import java.awt.Component;
 
-public class RuanableThread implements Runnable {
+public class RunnableThread implements Runnable {
 
     private Bird bird;
     private Component com;
     private long delay = 100;
 
-    public RuanableThread(Bird bird, Component com, long delay) {
+    public RunnableThread(Bird bird, Component com, long delay) {
         this.bird = bird;
         this.com = com;
         this.delay = delay;

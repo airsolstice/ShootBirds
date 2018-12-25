@@ -1,7 +1,6 @@
 package org.demo.birds;
 
 import java.util.Random;
-import javax.swing.JPanel;
 
 public class RunRandomBirds implements Runnable {
     private BirdPanel panel;
@@ -27,7 +26,7 @@ public class RunRandomBirds implements Runnable {
                     delay += 20;
                 Bird b = new Bird(0, y, 10);
                 panel.add(b);
-                Runnable r = new RuanableThread(b, panel, delay);
+                Runnable r = new RunnableThread(b, panel, delay);
                 Thread t = new Thread(r);
                 t.start();
                 Thread.sleep(delay1);

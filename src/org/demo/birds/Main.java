@@ -17,20 +17,6 @@ public class Main {
         frame.setVisible(true);
     }
 
-    public static void test1(){
-        JFrame jframe = new JFrame();
-        jframe.setSize(800, 600);
-        jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        ImageIcon airplane = new ImageIcon("res/airplane.png");
-        JPanel panel = new JPanel();
-
-        panel.getGraphics().drawImage(airplane.getImage(), 150-25, 200-80, 50, 80, jframe.getContentPane());
-
-        jframe.getContentPane().add(panel);
-        jframe.setVisible(true);
-    }
-
     public static void test() throws Exception {
         BufferedImage sourceImage = ImageIO.read(new FileInputStream("res/4.gif"));
         BufferedImage dstImage = null;

@@ -20,7 +20,6 @@ public class Bird {
     }
 
     public void move(Rectangle2D bounds) {
-
         if (x >= bounds.getMaxX() + 200) {
             leave = true;
         }

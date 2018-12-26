@@ -21,10 +21,12 @@ public class Bird {
 
     public void move(Rectangle2D bounds) {
 
-        if (x >= bounds.getMaxX() - 1)
+        if (x >= bounds.getMaxX() + 200) {
             leave = true;
-        if (isDead())
+        }
+        if (isDead()) {
             y += dy;
+        }
         x += dx;
     }
 

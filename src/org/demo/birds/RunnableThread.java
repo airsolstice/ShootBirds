@@ -17,7 +17,7 @@ public class RunnableThread implements Runnable {
     public void run() {
         try {
             while (!bird.isLeave()) {
-                if (bird.getY() > 265)
+                if (bird.getY() > GameFrame.DEFAULT_FRAME_HEIGHT)
                     bird.setLeave(true);
                 bird.move(com.getBounds());
                 com.repaint();

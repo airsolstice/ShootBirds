@@ -8,6 +8,9 @@ import javax.swing.*;
 
 public class GameFrame extends JFrame {
 
+    public static final int DEFAULT_FRAME_WIDTH = 450;
+    public static final int DEFAULT_FRAME_HEIGHT = 550;
+
     private JButton test;
     private JTextField birdNumText, bulletNumText, field3;
     private JLabel label1, label2, label3;
@@ -22,7 +25,7 @@ public class GameFrame extends JFrame {
 
     private void setLayout() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(500, 350);
+        this.setSize(DEFAULT_FRAME_WIDTH, DEFAULT_FRAME_HEIGHT);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
 

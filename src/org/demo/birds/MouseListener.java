@@ -7,16 +7,15 @@ import javax.swing.JOptionPane;
 public class MouseListener extends MouseAdapter {
 
     private BirdPanel panel;
-    private int width = 135;
-    private int height = 265;
+    private int width = GameFrame.DEFAULT_FRAME_WIDTH / 2;
+    private int height = GameFrame.DEFAULT_FRAME_HEIGHT - 100;
     private ArrayList<Bird> list;
-    private double l = 65;
-
 
     public MouseListener(BirdPanel panel) {
         this.panel = panel;
     }
 
+    @Override
     @SuppressWarnings("deprecation")
     public void mouseClicked(MouseEvent evt) {
         if (evt.getClickCount() == 1) {
@@ -48,23 +47,23 @@ public class MouseListener extends MouseAdapter {
         }
     }
 
-
 }
 
 class MouseMove implements MouseMotionListener {
     private BirdPanel panel;
-    private int width = 135;
-    private int height = 265;
+    private int width = GameFrame.DEFAULT_FRAME_WIDTH / 2;
+    private int height = GameFrame.DEFAULT_FRAME_HEIGHT - 100;
     private double l = 65;
 
     public MouseMove(BirdPanel panel) {
         this.panel = panel;
     }
 
+    @Override
     public void mouseDragged(MouseEvent arg0) {
-
     }
 
+    @Override
     public void mouseMoved(MouseEvent e) {
         int x0 = e.getX();
         int y0 = e.getY();

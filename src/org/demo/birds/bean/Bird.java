@@ -34,17 +34,17 @@ public class Bird {
     }
 
     public Image getImage() {
-        ImageIcon icon = new ImageIcon("res/4.gif");
+        ImageIcon icon = new ImageIcon("res/3.png");
         return icon.getImage();
     }
 
     public int getImageX() {
-        ImageIcon icon = new ImageIcon("res/4.gif");
+        ImageIcon icon = new ImageIcon("res/3.png");
         return icon.getIconWidth();
     }
 
     public int getImageY() {
-        ImageIcon icon = new ImageIcon("res/4.gif");
+        ImageIcon icon = new ImageIcon("res/3.png");
         return icon.getIconHeight();
     }
 

@@ -6,6 +6,8 @@ import org.demo.birds.listener.MouseMoveListener;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import javax.swing.*;
 
 public class BirdPanel extends JPanel {
@@ -18,13 +20,12 @@ public class BirdPanel extends JPanel {
 
     private int width = 100;
     private int height = 100;
-    private ArrayList<Bird> birds = new ArrayList<Bird>();
+
+    private List<Bird> birds = Collections.synchronizedList(new ArrayList<>());
 
     public BirdPanel() {
-        MouseClickListener clickListener = new MouseClickListener(this);
-        MouseMoveListener moveListener = new MouseMoveListener(this);
-        this.addMouseListener(clickListener);
-        this.addMouseMotionListener(moveListener);
+        this.addMouseListener(new MouseClickListener(this));
+        this.addMouseMotionListener(new MouseMoveListener(this));
         this.setLayout(null);
     }
 
@@ -32,46 +33,32 @@ public class BirdPanel extends JPanel {
         birds.add(b);
     }
 
-    public int getX3() {
-        return x3;
-    }
-
-    public void setX3(int x3) {
-        this.x3 = x3;
-    }
-
-    public int getY3() {
-        return y3;
-    }
-
-    public void setY3(int y3) {
-        this.y3 = y3;
-    }
-
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);
-        ImageIcon icon = new ImageIcon("res/background.jpg");
+        ImageIcon icon = new ImageIcon("res/background.png");
 
         this.setBackground(Color.BLUE);
         Graphics2D g2 = (Graphics2D) g;
         g2.drawImage(icon.getImage(), 0, 0, icon.getIconWidth(), icon.getIconHeight(), Color.CYAN, this);
         g2.setStroke(new BasicStroke(5.0f));
-        g2.setColor(Color.BLUE);
-        g2.drawLine(x1, y1, x2, y2);
-        g2.drawOval(x3-5, y3-5, 10,10);
+        g2.setColor(new Color(112, 112, 112));
         ImageIcon airplane = new ImageIcon("res/airplane.png");
         g2.drawImage(airplane.getImage(), x1 - width / 2, y1 - height + 10, width, height, this);
+        g2.fillOval(x1 - 8, y1 - 58, 16, 16);
+        g2.drawLine(x1, y1 - 50, x2, y2 - 70);
+        g2.drawOval(x3 - 5, y3 - 55, 10, 10);
 
-        for (Bird b : birds) {
-            if (!b.isLeave()){
+        for (int i = 0; i < birds.size(); i++) {
+            Bird b = birds.get(i);
+            if (!b.isLeave()) {
                 g2.fill(b.getShape());
                 g2.drawImage(b.getImage(), b.getX(), b.getY(), b.getImageX(), b.getImageY(), this);
             }
         }
     }
 
-    public ArrayList<Bird> getList() {
+    public List<Bird> getList() {
         return birds;
     }
 
@@ -81,7 +68,7 @@ public class BirdPanel extends JPanel {
         repaint();
     }
 
-    public void drawOval(int x, int y){
+    public void drawOval(int x, int y) {
         x3 = x;
         y3 = y;
         repaint();

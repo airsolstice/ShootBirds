@@ -7,13 +7,13 @@ import org.demo.birds.bean.Bullet;
 
 import java.applet.Applet;
 import java.applet.AudioClip;
-import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class GameStartRunnable implements Runnable {
 
     private BirdPanel panel;
-    private ArrayList<Bird> birds;
+    private List<Bird> birds;
     private int remainBirds = 50, deadBirds = 0;
     private GameFrame frame;
 
@@ -62,6 +62,7 @@ public class GameStartRunnable implements Runnable {
             }
         } catch (Exception e) {
             System.out.println("抛出这个异常不知道是怎么回事？");
+            e.printStackTrace();
         }
     }
 }

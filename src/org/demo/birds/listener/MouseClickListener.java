@@ -8,7 +8,7 @@ import org.demo.birds.runnable.GunShootRunnable;
 import org.demo.birds.runnable.GunSoundRunnable;
 
 import java.awt.event.*;
-import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class MouseClickListener extends MouseAdapter {
@@ -16,7 +16,7 @@ public class MouseClickListener extends MouseAdapter {
     private BirdPanel panel;
     private int width = GameFrame.DEFAULT_FRAME_WIDTH / 2;
     private int height = GameFrame.DEFAULT_FRAME_HEIGHT - 100;
-    private ArrayList<Bird> list;
+    private List<Bird> list;
 
     public MouseClickListener(BirdPanel panel) {
         this.panel = panel;
@@ -46,9 +46,8 @@ public class MouseClickListener extends MouseAdapter {
 
             } else {
                 JOptionPane.showMessageDialog(null, "子弹打光");
-                Thread.currentThread().destroy();
+//                Thread.currentThread().destroy();
             }
-
 
             for (Bird b : list) {
                 int x1 = b.getX();

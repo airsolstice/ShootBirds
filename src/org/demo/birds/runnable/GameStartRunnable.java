@@ -10,6 +10,9 @@ import java.applet.AudioClip;
 import java.util.List;
 import javax.swing.JOptionPane;
 
+/**
+ * 游戏开始
+ */
 public class GameStartRunnable implements Runnable {
 
     private BirdPanel panel;
@@ -42,7 +45,7 @@ public class GameStartRunnable implements Runnable {
                 frame.getField3().setText("" + deadBirds + "ֻ");
                 Thread.sleep(100);
                 if (remainBirds > 0) {
-                    AudioClip clip = Applet.newAudioClip(getClass().getResource("/bird.wav"));
+                    AudioClip clip = Applet.newAudioClip(getClass().getResource("/birdsound.wav"));
                     clip.play();
                     try {
                         Thread.sleep(100);

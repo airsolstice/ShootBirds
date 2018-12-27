@@ -9,19 +9,29 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+/**
+ * 游戏框体
+ */
 public class GameFrame extends JFrame {
 
+    /**
+     * 框体大小
+     */
     public static final int DEFAULT_FRAME_WIDTH = 450;
     public static final int DEFAULT_FRAME_HEIGHT = 550;
 
-    private JButton test;
+    //
+    private JButton start;
+    //
     private JTextField birdNumText, bulletNumText, field3;
+    //
     private JLabel label1, label2, label3;
+    //
     private BirdPanel panel;
 
     public GameFrame() {
         // 设置应用图标
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage("res/bird.gif"));
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage("res/icon.gif"));
         init();
         setLayout();
     }
@@ -37,7 +47,7 @@ public class GameFrame extends JFrame {
         Box box2 = Box.createHorizontalBox();
         box1.add(label1);
         box1.add(getBirdNumText());
-        box1.add(test);
+        box1.add(start);
         box2.add(label2);
         box2.add(getBulletNumText());
         box2.add(label3);
@@ -46,7 +56,8 @@ public class GameFrame extends JFrame {
         box.add(box2);
         add(panel, BorderLayout.CENTER);
         add(box, BorderLayout.SOUTH);
-        test.addActionListener(new ActionListener() {
+        // 设置按钮监听
+        start.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 startGame();
             }
@@ -65,8 +76,8 @@ public class GameFrame extends JFrame {
         getBirdNumText().setEditable(false);
         getBulletNumText().setEditable(false);
         panel = new BirdPanel();
-        test = new JButton("开始游戏");
-        panel.add(test);
+        start = new JButton("开始游戏");
+        panel.add(start);
     }
 
     public void startGame() {

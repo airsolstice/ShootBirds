@@ -27,6 +27,7 @@ public class GunShootRunnable implements Runnable {
         if(k < 0){
             for (int i = startX; i < GameFrame.DEFAULT_FRAME_WIDTH; i += 10) {
                 float currentY = endY + 1 / k * (i - endX);
+                System.out.println(currentY);
                 panel.drawOval(i, (int) currentY);
                 try {
                     Thread.sleep(150);
@@ -36,7 +37,6 @@ public class GunShootRunnable implements Runnable {
             }
         } else if(k == 0){
             for (int i = startY; i >0; i -= 10) {
-
                 panel.drawOval(startX, i);
                 try {
                     Thread.sleep(150);
@@ -47,6 +47,7 @@ public class GunShootRunnable implements Runnable {
         }else {
             for (int i = startX; i > 0; i -= 10) {
                 float currentY = endY + 1 / k * (i - endX);
+                System.out.println(currentY);
                 panel.drawOval(i, (int) currentY);
                 try {
                     Thread.sleep(150);

@@ -5,6 +5,9 @@ import org.demo.birds.bean.Bird;
 
 import java.awt.Component;
 
+/**
+ * 鸟移动生成
+ */
 public class BirdMoveRunnable implements Runnable {
 
     private Bird bird;

@@ -6,11 +6,14 @@ import org.demo.birds.jframe.GameFrame;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 
+/**
+ * 鼠标移动监听事件
+ */
 public class MouseMoveListener implements MouseMotionListener {
     private BirdPanel panel;
     private int width = GameFrame.DEFAULT_FRAME_WIDTH / 2;
     private int height = GameFrame.DEFAULT_FRAME_HEIGHT - 100;
-    private double l = 15;
+    private double l = 30;
 
     public MouseMoveListener(BirdPanel panel) {
         this.panel = panel;

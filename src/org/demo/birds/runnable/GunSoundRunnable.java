@@ -9,7 +9,7 @@ public class GunSoundRunnable implements Runnable {
     public void run() {
 
         try {
-            AudioClip clip = Applet.newAudioClip(getClass().getResource("/GunSound.wav"));
+            AudioClip clip = Applet.newAudioClip(getClass().getResource("/gunsound.wav"));
             clip.play();
             Thread.sleep(200);
             clip.stop();

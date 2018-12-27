@@ -5,6 +5,9 @@ import org.demo.birds.bean.Bird;
 
 import java.util.Random;
 
+/**
+ * 鸟飞行轨迹生成
+ */
 public class BirdFlyRunnable implements Runnable {
     private BirdPanel panel;
 

@@ -1,6 +1,6 @@
-package org.demo.birds;
+package org.demo.birds.bean;
 
-class Bullet {
+public class Bullet {
     private static Bullet bullet;
     private int num=50;
 

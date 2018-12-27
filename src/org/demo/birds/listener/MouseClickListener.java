@@ -1,17 +1,24 @@
-package org.demo.birds;
+package org.demo.birds.listener;
+
+import org.demo.birds.bean.Bird;
+import org.demo.birds.bean.Bullet;
+import org.demo.birds.jframe.BirdPanel;
+import org.demo.birds.jframe.GameFrame;
+import org.demo.birds.runnable.GunShootRunnable;
+import org.demo.birds.runnable.GunSoundRunnable;
 
 import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class MouseListener extends MouseAdapter {
+public class MouseClickListener extends MouseAdapter {
 
     private BirdPanel panel;
     private int width = GameFrame.DEFAULT_FRAME_WIDTH / 2;
     private int height = GameFrame.DEFAULT_FRAME_HEIGHT - 100;
     private ArrayList<Bird> list;
 
-    public MouseListener(BirdPanel panel) {
+    public MouseClickListener(BirdPanel panel) {
         this.panel = panel;
     }
 
@@ -29,11 +36,11 @@ public class MouseListener extends MouseAdapter {
             }
 
             if (num > 0) {
-                GunSoundThread rr = new GunSoundThread();
+                GunSoundRunnable rr = new GunSoundRunnable();
                 Thread tt1 = new Thread(rr);
                 tt1.start();
 
-                GunPlayerThread gpt = new GunPlayerThread(panel, x, y);
+                GunShootRunnable gpt = new GunShootRunnable(panel, x, y);
                 Thread tt2 = new Thread(gpt);
                 tt2.start();
 
@@ -54,31 +61,6 @@ public class MouseListener extends MouseAdapter {
                 }
             }
         }
-    }
-
-}
-
-class MouseMove implements MouseMotionListener {
-    private BirdPanel panel;
-    private int width = GameFrame.DEFAULT_FRAME_WIDTH / 2;
-    private int height = GameFrame.DEFAULT_FRAME_HEIGHT - 100;
-    private double l = 15;
-
-    public MouseMove(BirdPanel panel) {
-        this.panel = panel;
-    }
-
-    @Override
-    public void mouseDragged(MouseEvent arg0) {
-    }
-
-    @Override
-    public void mouseMoved(MouseEvent e) {
-        int x0 = e.getX();
-        int y0 = e.getY();
-        double x = width - l * (width - x0) / (Math.sqrt((width - x0) * (width - x0) + (height - y0) * (height - y0)));
-        double y = height - l * (height - y0) / (Math.sqrt((width - x0) * (width - x0) + (height - y0) * (height - y0)));
-        this.panel.drawLine((int) x, (int) y);
     }
 
 }

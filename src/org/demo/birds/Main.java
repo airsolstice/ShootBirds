@@ -1,5 +1,7 @@
 package org.demo.birds;
 
+import org.demo.birds.jframe.GameFrame;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.geom.AffineTransform;

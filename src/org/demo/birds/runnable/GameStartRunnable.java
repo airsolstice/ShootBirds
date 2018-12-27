@@ -1,19 +1,23 @@
-package org.demo.birds;
+package org.demo.birds.runnable;
+
+import org.demo.birds.jframe.BirdPanel;
+import org.demo.birds.jframe.GameFrame;
+import org.demo.birds.bean.Bird;
+import org.demo.birds.bean.Bullet;
 
 import java.applet.Applet;
 import java.applet.AudioClip;
-import java.net.URL;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class StatThread implements Runnable {
+public class GameStartRunnable implements Runnable {
 
     private BirdPanel panel;
     private ArrayList<Bird> birds;
     private int remainBirds = 50, deadBirds = 0;
     private GameFrame frame;
 
-    public StatThread(BirdPanel panel, GameFrame frame) {
+    public GameStartRunnable(BirdPanel panel, GameFrame frame) {
         this.panel = panel;
         this.frame = frame;
     }

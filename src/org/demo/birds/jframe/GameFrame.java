@@ -1,4 +1,7 @@
-package org.demo.birds;
+package org.demo.birds.jframe;
+
+import org.demo.birds.runnable.GameStartRunnable;
+import org.demo.birds.runnable.BirdFlyRunnable;
 
 import java.awt.BorderLayout;
 import java.awt.Toolkit;
@@ -67,10 +70,10 @@ public class GameFrame extends JFrame {
     }
 
     public void startGame() {
-        Runnable rr = new RunRandomBirds(panel);
+        Runnable rr = new BirdFlyRunnable(panel);
         Thread t = new Thread(rr);
         t.start();
-        Runnable rr2 = new StatThread(panel, this);
+        Runnable rr2 = new GameStartRunnable(panel, this);
         Thread tt = new Thread(rr2);
         tt.start();
     }

@@ -1,14 +1,17 @@
-package org.demo.birds;
+package org.demo.birds.runnable;
+
+import org.demo.birds.jframe.GameFrame;
+import org.demo.birds.bean.Bird;
 
 import java.awt.Component;
 
-public class RunnableThread implements Runnable {
+public class BirdMoveRunnable implements Runnable {
 
     private Bird bird;
     private Component com;
     private long delay = 100;
 
-    public RunnableThread(Bird bird, Component com, long delay) {
+    public BirdMoveRunnable(Bird bird, Component com, long delay) {
         this.bird = bird;
         this.com = com;
         this.delay = delay;

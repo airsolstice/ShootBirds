@@ -1,4 +1,4 @@
-package org.demo.birds;
+package org.demo.birds.bean;
 
 import java.awt.Image;
 import java.awt.geom.Ellipse2D;

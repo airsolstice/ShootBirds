@@ -1,4 +1,8 @@
-package org.demo.birds;
+package org.demo.birds.jframe;
+
+import org.demo.birds.bean.Bird;
+import org.demo.birds.listener.MouseClickListener;
+import org.demo.birds.listener.MouseMoveListener;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -17,10 +21,10 @@ public class BirdPanel extends JPanel {
     private ArrayList<Bird> birds = new ArrayList<Bird>();
 
     public BirdPanel() {
-        MouseListener listener = new MouseListener(this);
-        MouseMove move = new MouseMove(this);
-        this.addMouseListener(listener);
-        this.addMouseMotionListener(move);
+        MouseClickListener clickListener = new MouseClickListener(this);
+        MouseMoveListener moveListener = new MouseMoveListener(this);
+        this.addMouseListener(clickListener);
+        this.addMouseMotionListener(moveListener);
         this.setLayout(null);
     }
 

@@ -1,9 +1,10 @@
-package org.demo.birds;
+package org.demo.birds.runnable;
 
 
-import java.awt.*;
+import org.demo.birds.jframe.BirdPanel;
+import org.demo.birds.jframe.GameFrame;
 
-public class GunPlayerThread implements Runnable {
+public class GunShootRunnable implements Runnable {
 
     private int endX;
     private int endY;
@@ -12,7 +13,7 @@ public class GunPlayerThread implements Runnable {
 
     private BirdPanel panel;
 
-    public GunPlayerThread(BirdPanel panel, int x, int y) {
+    public GunShootRunnable(BirdPanel panel, int x, int y) {
         this.endX = x;
         this.endY = y;
         this.panel = panel;

@@ -1,11 +1,14 @@
-package org.demo.birds;
+package org.demo.birds.runnable;
+
+import org.demo.birds.jframe.BirdPanel;
+import org.demo.birds.bean.Bird;
 
 import java.util.Random;
 
-public class RunRandomBirds implements Runnable {
+public class BirdFlyRunnable implements Runnable {
     private BirdPanel panel;
 
-    public RunRandomBirds(BirdPanel panel) {
+    public BirdFlyRunnable(BirdPanel panel) {
         this.panel = panel;
     }
 
@@ -26,7 +29,7 @@ public class RunRandomBirds implements Runnable {
                     delay += 20;
                 Bird b = new Bird(0, y, 10);
                 panel.add(b);
-                Runnable r = new RunnableThread(b, panel, delay);
+                Runnable r = new BirdMoveRunnable(b, panel, delay);
                 Thread t = new Thread(r);
                 t.start();
                 Thread.sleep(delay1);

@@ -1,9 +1,9 @@
-package org.demo.birds;
+package org.demo.birds.runnable;
 
 import java.applet.Applet;
 import java.applet.AudioClip;
 
-public class GunSoundThread implements Runnable {
+public class GunSoundRunnable implements Runnable {
 
     @Override
     public void run() {

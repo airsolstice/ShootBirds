@@ -30,4 +30,8 @@ public class Bullet {
         num--;
     }
 
+    public void reset(){
+        num = 100;
+    }
+
 }

@@ -28,12 +28,13 @@ public class GameStartRunnable implements Runnable {
     @SuppressWarnings("deprecation")
     public void run() {
         try {
+            Bullet.getInstance().reset();
             while (true) {
                 birds = panel.getList();
                 remainBirds = 50;
                 deadBirds = 0;
-                for (Bird b : birds) {
-
+                for (int i = 0; i < birds.size(); i++) {
+                    Bird b = birds.get(i);
                     if (b.isDead() || b.isLeave()) {
                         remainBirds--;
                     }
